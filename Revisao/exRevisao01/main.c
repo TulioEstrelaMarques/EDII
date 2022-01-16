@@ -14,7 +14,7 @@ int listaVazia(item *ini)
     }
     return 0;
 }
-item * leituraLista1(item *ini,item *proximo)
+void leituraLista1(item *ini,item *proximo)
 {
     proximo = ini;
     if(!listaVazia(ini))
@@ -34,14 +34,15 @@ item * leituraLista1(item *ini,item *proximo)
     }
 
 }
-void mostrarLista(item *ini,item *proximo)
+void mostrarLista(item *proximo)
 {
-    proximo->prox=ini;
+    item *ini;
+    ini=proximo->prox;
     printf("Os valores foram: ");
-    while(proximo!=NULL)
+    while(ini!=NULL)
     {
-        printf("%d",proximo->num);
-        proximo=proximo->prox;
+        printf("%d",ini->num);
+        ini=ini->prox;
     }
 }
 
@@ -50,6 +51,6 @@ int main()
     item *inicio = (item *)malloc(sizeof(item));
     item *proximo = (item *)malloc(sizeof(item));
     leituraLista1(inicio,proximo);
-    mostrarLista(inicio,proximo);
+    mostrarLista(proximo);
     return 0;
 }
