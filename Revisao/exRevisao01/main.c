@@ -25,7 +25,7 @@ int lista_vazia(No *p)
     }
 }
 
-void no_insere_fim(No *p, int x)
+void no_insere(No *p, int x)
 {
     No *q,*pos;
     q=(No*) malloc(sizeof(No));
@@ -41,7 +41,7 @@ void no_insere_fim(No *p, int x)
     pos->prox=q;
 }
 
-void imprimi(No *p)
+void imprime(No *p)
 {
     No *q;
     q=p->prox;
@@ -68,6 +68,7 @@ int main()
         printf( "1 - Inserir elemento na lista 1\n" );
         printf( "2 - Inserir elemento na lista 2\n" );
         printf( "3 - Mostrar lista 1\n" );
+        printf( "4 - Mostrar lista 2\n" );
         printf( "Opcao?  " );
         scanf( "%d",&op);
         switch( op )
@@ -78,31 +79,34 @@ int main()
         case 1:
             printf( "Valor? " );
             scanf("%d",&valor);
-            no_insere_fim(&p,valor);
+            no_insere(&p,valor);
             break;
         case 2:
             printf( "Valor? " );
             scanf("%d",&valor);
-            no_insere_fim(&q,valor);
+            no_insere(&q,valor);
             break;
         case 3:
-            if (lista_vazia(&p))
+            if (!lista_vazia(&p))
             {
-                printf("Lista vazia!!\n");
+                imprime(&p);
+
             }
             else
             {
-                imprimi(&p);
+                printf("Lista vazia!!\n");
             }
+            break;
         case 4:
-            if (lista_vazia(&q))
+            if (!lista_vazia(&q))
             {
-                printf("Lista vazia!!\n");
+                imprime(&q);
             }
             else
             {
-                imprimi(&q);
+                printf("Lista vazia!!\n");
             }
+            break;
         }
 
     }
