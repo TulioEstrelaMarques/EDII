@@ -1,5 +1,13 @@
 # depslib dependency file v1.0
-1642417755 source:i:\documentos\github\ed2\revisao\exrevisao01\main.c
+1642421384 source:i:\documentos\github\ed2\revisao\exrevisao01\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1642421852 source:i:\documentos\github\ed2\revisao\exrevisao01\ex02.c
+	<stdio.h>
+	<stdlib.h>
+
+1642421384 source:i:\documentos\github\ed2\revisao\exrevisao01\ex01.c
 	<stdio.h>
 	<stdlib.h>
 
