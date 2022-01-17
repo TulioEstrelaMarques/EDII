@@ -54,6 +54,34 @@ void imprime(No *p)
     printf("NULL");
 }
 
+void imprime_inter(No *p, No *q)
+{
+    No *r,*s;
+    r=p->prox;
+    s=q->prox;
+    printf("\n");
+    while(r!=NULL || s!=NULL)
+    {
+        if(r->val < s->val)
+        {
+            printf("[%i]-->",r->val);
+            printf("[%i]-->",s->val);
+        }
+        else
+        {
+            printf("[%i]-->",s->val);
+            printf("[%i]-->",r->val);
+        }
+
+        r=r->prox;
+        s=s->prox;
+
+
+    }
+    printf("NULL");
+}
+
+
 int main()
 {
     struct No *p,*q;
@@ -69,6 +97,7 @@ int main()
         printf( "2 - Inserir elemento na lista 2\n" );
         printf( "3 - Mostrar lista 1\n" );
         printf( "4 - Mostrar lista 2\n" );
+        printf( "5 - Mostrar lista intercalada\n" );
         printf( "Opcao?  " );
         scanf( "%d",&op);
         switch( op )
@@ -101,6 +130,17 @@ int main()
             if (!lista_vazia(&q))
             {
                 imprime(&q);
+            }
+            else
+            {
+                printf("Lista vazia!!\n");
+            }
+            break;
+
+        case 5:
+            if (!lista_vazia(&p)&&!lista_vazia(&q))
+            {
+                imprime_inter(&p,&q);
             }
             else
             {
