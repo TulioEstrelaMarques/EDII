@@ -64,18 +64,17 @@ void imprime_separado(No *p)
     {
         if(r->val%2==0)
         {
+            printf("\n\nLista de Pares\n");
             printf("[%i]-->",r->val);
         }
         else
         {
-
+            printf("\n\nLista de Impares\n");
             printf("[%i]-->",s->val);
         }
 
         r=r->prox;
         s=s->prox;
-
-
     }
     printf("NULL");
 }
@@ -83,11 +82,10 @@ void imprime_separado(No *p)
 
 int main()
 {
-    struct No *p,*q;
-    int valor, op,y;
+    struct No *p;
+    int valor, op;
 
     inic_fil(&p);
-    inic_fil(&q);
     while( 1 )
     {
         printf("\n\nLista Linear Simplesmente Encadeada:\n");
