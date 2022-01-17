@@ -54,23 +54,22 @@ void imprime(No *p)
     printf("NULL");
 }
 
-void imprime_inter(No *p, No *q)
+void imprime_separado(No *p)
 {
     No *r,*s;
     r=p->prox;
-    s=q->prox;
+    s=p->prox;
     printf("\n");
     while(r!=NULL || s!=NULL)
     {
-        if(r->val < s->val)
+        if(r->val%2==0)
         {
             printf("[%i]-->",r->val);
-            printf("[%i]-->",s->val);
         }
         else
         {
+
             printf("[%i]-->",s->val);
-            printf("[%i]-->",r->val);
         }
 
         r=r->prox;
@@ -93,11 +92,9 @@ int main()
     {
         printf("\n\nLista Linear Simplesmente Encadeada:\n");
         printf( "0 - Sair\n");
-        printf( "1 - Inserir elemento na lista 1\n" );
-        printf( "2 - Inserir elemento na lista 2\n" );
-        printf( "3 - Mostrar lista 1\n" );
-        printf( "4 - Mostrar lista 2\n" );
-        printf( "5 - Mostrar lista intercalada\n" );
+        printf( "1 - Inserir elemento na lista\n" );
+        printf( "2 - Mostrar lista\n" );
+        printf( "3 - Mostrar lista separada\n" );
         printf( "Opcao?  " );
         scanf( "%d",&op);
         switch( op )
@@ -110,12 +107,8 @@ int main()
             scanf("%d",&valor);
             no_insere(&p,valor);
             break;
+
         case 2:
-            printf( "Valor? " );
-            scanf("%d",&valor);
-            no_insere(&q,valor);
-            break;
-        case 3:
             if (!lista_vazia(&p))
             {
                 imprime(&p);
@@ -126,21 +119,11 @@ int main()
                 printf("Lista vazia!!\n");
             }
             break;
-        case 4:
-            if (!lista_vazia(&q))
-            {
-                imprime(&q);
-            }
-            else
-            {
-                printf("Lista vazia!!\n");
-            }
-            break;
 
-        case 5:
-            if (!lista_vazia(&p)&&!lista_vazia(&q))
+        case 3:
+            if (!lista_vazia(&p))
             {
-                imprime_inter(&p,&q);
+                imprime_separado(&p);
             }
             else
             {
