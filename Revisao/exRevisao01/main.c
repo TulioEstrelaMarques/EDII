@@ -56,17 +56,18 @@ void imprimi(No *p)
 
 int main()
 {
-    struct No *p;
-    int i,tam=0;
+    struct No *p,*q;
     int valor, op,y;
 
     inic_fil(&p);
+    inic_fil(&q);
     while( 1 )
     {
         printf("\n\nLista Linear Simplesmente Encadeada:\n");
         printf( "0 - Sair\n");
-        printf( "2 - Inserir elemento no fim da lista\n" );
-        printf( "5 - Mostrar lista\n" );
+        printf( "1 - Inserir elemento na lista 1\n" );
+        printf( "2 - Inserir elemento na lista 2\n" );
+        printf( "3 - Mostrar lista 1\n" );
         printf( "Opcao?  " );
         scanf( "%d",&op);
         switch( op )
@@ -74,12 +75,17 @@ int main()
         case 0:
             exit(0);
             break;
-        case 2:
+        case 1:
             printf( "Valor? " );
             scanf("%d",&valor);
             no_insere_fim(&p,valor);
             break;
-        case 5:
+        case 2:
+            printf( "Valor? " );
+            scanf("%d",&valor);
+            no_insere_fim(&q,valor);
+            break;
+        case 3:
             if (lista_vazia(&p))
             {
                 printf("Lista vazia!!\n");
@@ -87,6 +93,15 @@ int main()
             else
             {
                 imprimi(&p);
+            }
+        case 4:
+            if (lista_vazia(&q))
+            {
+                printf("Lista vazia!!\n");
+            }
+            else
+            {
+                imprimi(&q);
             }
         }
 
