@@ -59,21 +59,25 @@ void imprime_separado(No *p)
     No *r,*s;
     r=p->prox;
     s=p->prox;
-    printf("\n");
-    while(r!=NULL || s!=NULL)
+
+    printf("\nLista de Pares\n");
+    while(r!=NULL)
     {
         if(r->val%2==0)
         {
-            printf("\n\nLista de Pares\n");
             printf("[%i]-->",r->val);
         }
-        else
+        r=r->prox;
+    }
+    printf("NULL");
+
+    printf("\n\nLista de Impares\n");
+    while(s!=NULL)
+    {
+        if(s->val%2!=0)
         {
-            printf("\n\nLista de Impares\n");
             printf("[%i]-->",s->val);
         }
-
-        r=r->prox;
         s=s->prox;
     }
     printf("NULL");
