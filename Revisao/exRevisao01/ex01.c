@@ -56,29 +56,20 @@ void imprime(No *p)
 
 void imprime_inter(No *p, No *q)
 {
-    No *r,*s;
+    No *r,*s,*t;
     r=p->prox;
     s=q->prox;
-    printf("\n");
     while(r!=NULL || s!=NULL)
     {
-        if(r->val < s->val)
-        {
-            printf("[%i]-->",r->val);
-            printf("[%i]-->",s->val);
-        }
-        else
-        {
-            printf("[%i]-->",s->val);
-            printf("[%i]-->",r->val);
-        }
-
-        r=r->prox;
-        s=s->prox;
-
+        t=s->val;
+        t=s->prox;
+        t=r->val;
+        t=r->prox;
 
     }
-    printf("NULL");
+    imprime(t);
+
+
 }
 
 
