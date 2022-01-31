@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1643659811 source:i:\documentos\github\ed2\listas\listas\main.c
+	<stdio.h>
+	<stdlib.h>
+
