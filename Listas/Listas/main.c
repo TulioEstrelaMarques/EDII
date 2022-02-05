@@ -117,13 +117,13 @@ No* remover(Lista *lista, int num) {
     return remover;
 }
 
-No* buscar(Lista *lista, int num){
+No* buscar(Lista *lista, int num) {
     No *aux, *no = NULL;
     aux = lista->inicio;
-    while(aux && aux->valor != num){
+    while(aux && aux->valor != num) {
         aux = aux->proximo;
     }
-    if(aux){
+    if(aux) {
         no = aux;
     }
 
@@ -152,7 +152,8 @@ int main() {
     criar_lista(&lista);
     do {
         printf("\n========Lista Encadeada=========");
-        printf("\n0 - Sair\n1 - InserirI\n2 - InserirF\n3 - InserirM\n4 - InserirO\n5 - Remover\n6 - Imprimir\n7 - Buscar\n");
+        printf("\n0 - Sair\n1 - InserirI\n2 - InserirF\n3 - InserirM");
+        printf("\n4 - InserirO\n5 - Remover\n6 - Imprimir\n7 - Buscar\n");
         printf("Qual opcao? ");
         scanf("%d",&opcao);
         switch(opcao) {
@@ -180,10 +181,10 @@ int main() {
             printf("Digite um valor a ser removido: ");
             scanf("%d",&valor);
             auxiliar = remover(&lista, valor);
-            if(auxiliar){
+            if(auxiliar) {
                 printf("Elemento removido: %d\n",auxiliar->valor);
                 free(auxiliar);
-            }else{
+            } else {
                 printf("Elemento inesistente!\n");
             }
             break;
@@ -194,9 +195,9 @@ int main() {
             printf("Digite um valor a ser buscado: ");
             scanf("%d",&valor);
             auxiliar = buscar(&lista, valor);
-            if(auxiliar){
+            if(auxiliar) {
                 printf("Valor encontrado: %d\n",auxiliar->valor);
-            }else{
+            } else {
                 printf("Valor nao encontrado!\n");
             }
             break;
