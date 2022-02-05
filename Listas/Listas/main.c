@@ -70,6 +70,53 @@ void inserir_meio(Lista *lista, int num, int ant) {
     }
 }
 
+void inserir_ordenado(Lista *lista, int num) {
+    No *aux,*nova = malloc(sizeof(No));
+    if(nova) {
+        nova->valor = num;
+        if(lista->inicio == NULL) {
+            nova->proximo = NULL;
+            lista->inicio = nova;
+        } else if(nova->valor < lista->inicio->valor) {
+            nova->proximo = lista->inicio;
+            lista->inicio = nova;
+        } else {
+            aux = lista->inicio;
+            while(aux->proximo && nova->valor > aux->proximo->valor) {
+                aux = aux->proximo;
+            }
+            nova->proximo = aux->proximo;
+            aux->proximo = nova;
+        }
+        lista->tam++;
+    } else {
+        printf("Erro ao alocar.");
+    }
+}
+
+No* remover(Lista *lista, int num) {
+    No *aux, *remover = NULL;
+    if(lista->inicio) {
+        if(lista->inicio->valor == num) {
+            remover = lista->inicio;
+            lista->inicio = remover->proximo;
+            lista->tam--;
+        } else {
+            aux = lista->inicio;
+            while(aux->proximo && aux->proximo->valor != num) {
+                aux = aux->proximo;
+                if(aux->proximo) {
+                    remover = aux->proximo;
+                    aux->proximo = remover->proximo;
+                    lista->tam--;
+                }
+            }
+        }
+    }
+
+    return remover;
+}
+
 void imprime(Lista lista) {
     No *no = lista.inicio;
     printf("\nTamanho da lista: %d",lista.tam);
@@ -88,10 +135,11 @@ int main() {
     int opcao, valor, anterior;
     //No *lista = NULL;
     Lista lista;
+    No *removido;
     criar_lista(&lista);
     do {
         printf("\n========Lista Encadeada=========");
-        printf("\n0 - Sair\n1 - InserirI\n2 - InserirF\n3 - InserirM\n4 - Imprimir\n");
+        printf("\n0 - Sair\n1 - InserirI\n2 - InserirF\n3 - InserirM\n4 - InserirO\n5 - Remover\n6 - Imprimir\n");
         printf("Qual opcao? ");
         scanf("%d",&opcao);
         switch(opcao) {
@@ -111,6 +159,22 @@ int main() {
             inserir_meio(&lista,valor,anterior);
             break;
         case 4:
+            printf("Digite um valor: ");
+            scanf("%d",&valor);
+            inserir_ordenado(&lista, valor);
+            break;
+        case 5:
+            printf("Digite um valor: ");
+            scanf("%d",&valor);
+            removido = remover(&lista, valor);
+            if(removido){
+                printf("Elemento removido: %d\n",removido->valor);
+                free(removido);
+            }else{
+                printf("Elemento inesistente!\n");
+            }
+            break;
+        case 6:
             imprime(lista);
             break;
         default:
