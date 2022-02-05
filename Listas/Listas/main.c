@@ -1,3 +1,7 @@
+/*
+    Estrutura basica da Lista Encadeada
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
