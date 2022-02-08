@@ -1,6 +1,6 @@
 /*
     Estrutura basica da Lista Encadeada
-    com inserção aletoria
+    com inserção aleatoria
 */
 
 #include <stdio.h>
