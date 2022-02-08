@@ -1,9 +1,11 @@
 /*
     Estrutura basica da Lista Encadeada
+    com inserção aletoria
 */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 //Criando a estrutura...
 typedef struct no {
@@ -149,36 +151,38 @@ void imprime(Lista lista) {
 
 
 int main() {
-    int opcao, valor, anterior;
+    srand(time(NULL));
+    int opcao, anterior;
     //No *lista = NULL;
     Lista lista;
     No *auxiliar;
     criar_lista(&lista);
     do {
+        int valor=1+rand()%100;
         printf("\n========Lista Encadeada=========");
-        printf("\n0 - Sair\n1 - InserirI\n2 - InserirF\n3 - InserirM");
-        printf("\n4 - InserirO\n5 - Remover\n6 - Imprimir\n7 - Buscar\n");
+        printf("\n0 - Sair\n1 - Inserir no Inicio\n2 - Inserir no Fum\n3 - Inserir no Meio");
+        printf("\n4 - Inserir Ordenado\n5 - Remover\n6 - Imprimir\n7 - Buscar\n");
         printf("Qual opcao? ");
         scanf("%d",&opcao);
         switch(opcao) {
         case 1:
-            printf("Digite um valor: ");
-            scanf("%d",&valor);
+            /*printf("Digite um valor: ");
+            scanf("%d",&valor);*/
             inserir_inicio(&lista,valor);
             break;
         case 2:
-            printf("Digite um valor: ");
-            scanf("%d",&valor);
+            /*printf("Digite um valor: ");
+            scanf("%d",&valor)*/
             inserir_fim(&lista,valor);
             break;
         case 3:
-            printf("Digite um valor e o valor de referencia: ");
-            scanf("%d%d",&valor,&anterior);
+            printf("Digite o valor de referencia: ");
+            scanf("%d",&anterior);
             inserir_meio(&lista,valor,anterior);
             break;
         case 4:
-            printf("Digite um valor: ");
-            scanf("%d",&valor);
+            /*printf("Digite um valor: ");
+            scanf("%d",&valor);*/
             inserir_ordenado(&lista, valor);
             break;
         case 5:
@@ -186,10 +190,10 @@ int main() {
             scanf("%d",&valor);
             auxiliar = remover(&lista, valor);
             if(auxiliar) {
-                printf("Elemento removido: %d\n",auxiliar->valor);
+                printf("\nElemento removido: %d\n",auxiliar->valor);
                 free(auxiliar);
             } else {
-                printf("Elemento inesistente!\n");
+                printf("\nElemento inesistente!\n");
             }
             break;
         case 6:
@@ -200,9 +204,9 @@ int main() {
             scanf("%d",&valor);
             auxiliar = buscar(&lista, valor);
             if(auxiliar) {
-                printf("Valor encontrado: %d\n",auxiliar->valor);
+                printf("\nValor encontrado: %d\n",auxiliar->valor);
             } else {
-                printf("Valor nao encontrado!\n");
+                printf("\nValor nao encontrado!\n");
             }
             break;
         default:
