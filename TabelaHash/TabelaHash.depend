@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1644142134 source:c:\users\usuario\documents\github\edii\tabelahash\main.c
+1644324737 source:c:\users\usuario\documents\github\edii\tabelahash\main.c
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 

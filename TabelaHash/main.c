@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <time.h>
 /*
     Metodo dobra: Número de elemento = 100
     2 * 100 = 200; o primo mais proximo é 199 ou 211
     fc = 100/199 = 0,50 ou 100/211 = 0,47
     parece que vamos ter que testar ambos
+    com inserção aleatoria
 */
 #define TAM 15 //apenas pra testes
 
@@ -86,19 +87,20 @@ void imprimir(Lista t[]) {
 }
 
 int main() {
-    int opcao, valor, retorno;
+    int opcao, retorno;
     Lista tabela[TAM];
-
+    srand(time(NULL));
     inicializarTabela(tabela);
     do {
+        int valor = 1+rand()%100;
         printf("\n========Tabela Hash=======");
         printf("\n0 - Sair\n1 - Inserir\n2 - Buscar\n3 - Imprimir");
         printf("\nEscolha a opcao: ");
         scanf("%d",&opcao);
         switch(opcao) {
         case 1:
-            printf("Qual valor dejesa inserir? ");
-            scanf("%d",&valor);
+            /*printf("Qual valor dejesa inserir? ");
+            scanf("%d",&valor);*/
             inserir(tabela,valor);
             break;
         case 2:

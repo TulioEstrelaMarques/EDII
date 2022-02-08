@@ -158,7 +158,7 @@ int main() {
     No *auxiliar;
     criar_lista(&lista);
     do {
-        int valor=1+rand()%100;
+        int valor = 1+rand()%100;
         printf("\n========Lista Encadeada=========");
         printf("\n0 - Sair\n1 - Inserir no Inicio\n2 - Inserir no Fum\n3 - Inserir no Meio");
         printf("\n4 - Inserir Ordenado\n5 - Remover\n6 - Imprimir\n7 - Buscar\n");
