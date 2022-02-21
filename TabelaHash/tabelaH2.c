@@ -63,9 +63,19 @@ void inicializarTabela(Lista t[]) {
     }
 }
 
+/*
+estava fazendo com o metodo errado...
 int funcaoHash(int key) {
     return key % TAM;
+}*/
+
+int funcaoHash(int key) { //dobra
+    int num_bit = 10;
+    int parte1 = key >> num_bit;
+    int parte2 = key & (TAM-1);
+    return (parte1^parte2);
 }
+
 
 void inserir(Lista t[], int num) {
     int id = funcaoHash(num);
