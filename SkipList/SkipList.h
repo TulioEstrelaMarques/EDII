@@ -1,3 +1,5 @@
+#ifndef SKIPLIST_H_INCLUDED
+#define SKIPLIST_H_INCLUDED
 
 typedef struct SkipList SkipList;
 
@@ -11,3 +13,7 @@ int vaziaSkipList(SkipList* sk);
 void imprimeSkipList(SkipList *sk);
 
 //struct NO* novoNo(int key, int level);
+
+
+
+#endif // SKIPLIST_H_INCLUDED

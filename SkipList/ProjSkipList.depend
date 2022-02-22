@@ -38,3 +38,16 @@
 	<stdlib.h>
 	"SkipList.h"
 
+1583423552 source:c:\users\usuario\documents\github\edii\skiplist\skiplist.c
+	<stdio.h>
+	<stdlib.h>
+	"SkipList.h"
+
+1645490626 c:\users\usuario\documents\github\edii\skiplist\skiplist.h
+
+1583423866 source:c:\users\usuario\documents\github\edii\skiplist\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"SkipList.h"
+
