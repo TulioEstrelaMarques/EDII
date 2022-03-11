@@ -171,24 +171,32 @@ int main() {
             scanf("%d",&valor);*/
             inserir_inicio(&lista,valor);
             printf("\nQuantidade de numero inserido: %d\n",++qt);
+            timing = clock() - timing;
+            printf("O tempo de busca foi: %.4lf",(((double)timing)/(CLOCKS_PER_SEC)));
             break;
         case 2:
             /*printf("Digite um valor: ");
             scanf("%d",&valor)*/
             inserir_fim(&lista,valor);
             printf("\nQuantidade de numero inserido: %d\n",++qt);
+            timing = clock() - timing;
+            printf("O tempo de busca foi: %.4lf",(((double)timing)/(CLOCKS_PER_SEC)));
             break;
         case 3:
             printf("Digite o valor de referencia: ");
             scanf("%d",&anterior);
             inserir_meio(&lista,valor,anterior);
             printf("\nQuantidade de numero inserido: %d\n",++qt);
+            timing = clock() - timing;
+            printf("O tempo de busca foi: %.4lf",(((double)timing)/(CLOCKS_PER_SEC)));
             break;
         case 4:
             /*printf("Digite um valor: ");
             scanf("%d",&valor);*/
             inserir_ordenado(&lista, valor);
             printf("\nQuantidade de numero inserido: %d\n",++qt);
+            timing = clock() - timing;
+            printf("O tempo de busca foi: %.4lf",(((double)timing)/(CLOCKS_PER_SEC)));
             break;
         case 5:
             printf("Digite um valor a ser removido: ");
@@ -200,6 +208,8 @@ int main() {
             } else {
                 printf("\nElemento inesistente!\n");
             }
+            timing = clock() - timing;
+            printf("O tempo de busca foi: %.4lf",(((double)timing)/(CLOCKS_PER_SEC)));
             break;
         case 6:
             imprime(lista);
@@ -215,7 +225,7 @@ int main() {
                 printf("\nValor nao encontrado!\n");
             }
             timing = clock() - timing;
-            printf("O tempo de busca foi: %.10lf",(((double)timing)/(CLOCKS_PER_SEC)));
+            printf("O tempo de busca foi: %.4lf",(((double)timing)/(CLOCKS_PER_SEC)));
             break;
         default:
             if(opcao!=0)

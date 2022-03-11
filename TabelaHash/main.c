@@ -5,10 +5,8 @@
     Metodo dobra: Número de elemento = 100
     2 * 100 = 200; o primo mais proximo é 199 ou 211
     fc = 100/199 = 0,50 ou 100/211 = 0,47
-    parece que vamos ter que testar ambos
-    com inserção aleatoria e timing
 */
-#define TAM 15 //apenas pra testes
+#define TAM 199
 
 typedef struct no {
     int key;
@@ -69,7 +67,7 @@ int funcaoHash(int key) {
     return key % TAM;
 }*/
 
-int funcaoHash(int key) { //dobra
+int funcaoHash(int key) { //metodo dobra
     int num_bit = 10;
     int parte1 = key >> num_bit;
     int parte2 = key & (TAM-1);
@@ -114,6 +112,8 @@ int main() {
             scanf("%d",&valor);*/
             inserir(tabela,valor);
             printf("\nQuantidade de numero inserido: %d\n",++qt);
+            timing = clock() - timing;
+            printf("O tempo de busca foi: %.4lf",(((double)timing)/(CLOCKS_PER_SEC)));
             break;
         case 2:
             printf("Qual valor dejesa buscar? ");
