@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1648492202 source:c:\users\usuario\documents\github\edii\hash\main.c
+	<stdio.h>
+	<stdlib.h>
+
